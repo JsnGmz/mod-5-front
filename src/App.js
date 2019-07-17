@@ -1,26 +1,30 @@
+/* Modules */
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { connect } from 'react-redux';
 
-function App() {
+//CSS
+import './App.scss';
+
+// Personal Components
+import Navbar from './Components/Navbar';
+import HomePage from './Components/HomePage';
+import Callback from './Components/Callback';
+
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+          {props.currentUser ? <Navbar /> : null}
+          <Route exact path='/' component={HomePage}/>
+          <Route exact path='/spotify/callback' component={Callback}/>
+      </Router>
   );
+};
+
+function mapStateToProps(state) {
+    return {
+        currentUser: state.currentUser
+    }
 }
 
-export default App;
+export default connect(mapStateToProps, null)(App);
