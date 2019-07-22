@@ -10,13 +10,15 @@ import './App.scss';
 import Navbar from './Components/Navbar';
 import HomePage from './Components/HomePage';
 import Callback from './Components/Callback';
+import Profile from './Components/Profile';
 
 const App = (props) => {
   return (
       <Router>
-          {props.currentUser ? <Navbar /> : null}
           <Route exact path='/' component={HomePage}/>
+          {props.currentUser ? <Navbar /> : null}
           <Route exact path='/spotify/callback' component={Callback}/>
+          <Route exact path='/profile' component={Profile} />
       </Router>
   );
 };
