@@ -10,7 +10,7 @@ const Callback = (props) => {
             Accept: 'application/json'
         },
         body: JSON.stringify({spotifyUriCode})
-    }).then(r => r.json().then(user => props.setUser(user)).then(props.history.push('/profile')));
+    }).then(r => r.json()).then(user => props.setUser(user)).then(props.history.push('/profile'));
     return null
 };
 
