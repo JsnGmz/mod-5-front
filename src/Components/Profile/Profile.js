@@ -7,6 +7,7 @@ import { Container, Row, Col, Card, CardImg, CardBody, CardText, CardDeck } from
 /* Files */
 import './Profile.scss';
 import ArtistCard from './../ArtistCard';
+import TopGenresCard from './../TopGenresCard';
 
 class Profile extends Component {
     componentDidUpdate() {
@@ -22,7 +23,7 @@ class Profile extends Component {
                 <Container>
                     <Row className='profile-wrapper'>
                         <Col sm='12' md='4'>
-                            <Card body inverse className='profile-img-card'>
+                            <Card className='profile-img-card'>
                                 <CardImg src={
                                             this.props.currentUser.profile_img_url
                                                 ?
@@ -32,39 +33,6 @@ class Profile extends Component {
                                         }
                                     alt={ this.props.currentUser.display_name ? this.props.currentUser.display_name : 'placeholder profile picture' }
                                 />
-                            </Card>
-                        </Col>
-                        <Col sm='12' md='8'>
-                            <Row>
-                                <CardDeck>
-                                    {this.props.usersTopArtists.slice(0, 3).map(artist => <Col sm='12' md='4'><ArtistCard artist={artist} key={artist.name}/></Col>)}
-                                </CardDeck>
-                            </Row>
-
-                            <br/>
-
-                            <Row>
-                                <CardDeck>
-                                    {this.props.usersTopArtists.slice(4, 7).map(artist => <Col sm='12' md='4'><ArtistCard artist={artist} key={artist.name}/></Col>)}
-                                </CardDeck>
-                            </Row>
-
-                            <br/>
-
-                            <Row>
-                                <CardDeck>
-                                    {this.props.usersTopArtists.slice(8, 11).map(artist => <Col sm='12' md='4'><ArtistCard artist={artist} key={artist.name}/></Col>)}
-                                </CardDeck>
-                            </Row>
-
-                            <br/>
-
-                        </Col>
-
-                    </Row>
-                    <Row className='account-info-wrapper'>
-                        <Col sm='12' md='4'>
-                            <Card className='account-info-card'>
                                 <CardBody>
                                     <CardText>
                                         Username: {this.props.currentUser.display_name}
@@ -74,12 +42,13 @@ class Profile extends Component {
                                     </CardText>
                                 </CardBody>
                             </Card>
+                            <br/>
+                            <TopGenresCard />
                         </Col>
-
                         <Col sm='12' md='8'>
                             <Row>
                                 <CardDeck>
-                                    {this.props.usersTopArtists.slice(12, 15).map(artist => <Col sm='12' md='4'><ArtistCard artist={artist} key={artist.name}/></Col>)}
+                                    {this.props.usersTopArtists.slice(0, 3).map(artist => <Col sm='12' md='4' key={artist.name}><ArtistCard artist={artist} key={artist.name}/></Col>)}
                                 </CardDeck>
                             </Row>
 
@@ -87,10 +56,36 @@ class Profile extends Component {
 
                             <Row>
                                 <CardDeck>
-                                    {this.props.usersTopArtists.slice(16, 19).map(artist => <Col sm='12' md='4'><ArtistCard artist={artist} key={artist.name}/></Col>)}
+                                    {this.props.usersTopArtists.slice(4, 7).map(artist => <Col sm='12' md='4' key={artist.name}><ArtistCard artist={artist} key={artist.name}/></Col>)}
                                 </CardDeck>
                             </Row>
+
+                            <br/>
+
+                            <Row>
+                                <CardDeck>
+                                    {this.props.usersTopArtists.slice(8, 11).map(artist => <Col sm='12' md='4' key={artist.name}><ArtistCard artist={artist} key={artist.name}/></Col>)}
+                                </CardDeck>
+                            </Row>
+
+                            <br/>
+
+                            <Row>
+                                <CardDeck>
+                                    {this.props.usersTopArtists.slice(12, 15).map(artist => <Col sm='12' md='4' key={artist.name}><ArtistCard artist={artist} key={artist.name}/></Col>)}
+                                </CardDeck>
+                            </Row>
+
+                            <br/>
+
+                            <Row>
+                                <CardDeck>
+                                    {this.props.usersTopArtists.slice(16, 19).map(artist => <Col sm='12' md='4' key={artist.name}><ArtistCard artist={artist} key={artist.name}/></Col>)}
+                                </CardDeck>
+                            </Row>
+
                         </Col>
+
                     </Row>
                 </Container>
             </Fragment>
@@ -114,21 +109,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
-
-
-// currentUser:
-// {…}
-// display_name:
-//     "tenrow"
-// email:
-//     "tenrow@gmail.com"
-// id:
-//     1
-// password_digest:
-//     null
-// profile_img_url:
-//     null
-// spotify_id:
-//     null
-// spotify_url:
-//     "https://open.spotify.com/user/tenrow"

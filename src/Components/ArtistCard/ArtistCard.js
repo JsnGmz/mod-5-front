@@ -4,12 +4,21 @@ import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reac
 import './ArtistCard.scss';
 
 const ArtistCard = (props) => {
+    const openArtistPage = () => {
+        window.open(props.artist.external_urls.spotify, '_blank');
+    };
+
+    const formatGenres = () => {
+        return props.artist.genres.join(', ');
+    };
+
     return (
-        <Card className='h-100'>
+        <Card className='h-100 artist-card' onClick={openArtistPage}>
             <CardImg className='artist-card-img' src={props.artist.images[1].url} alt={'Photo of ' + props.artist.name}/>
             <CardBody>
                 <CardTitle>{props.artist.name}</CardTitle>
                 <CardSubtitle>Num of Followers: {props.artist.followers.total}</CardSubtitle>
+                <CardText>Genres: {formatGenres()}</CardText>
             </CardBody>
         </Card>
     )

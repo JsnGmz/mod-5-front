@@ -1,0 +1,11 @@
+@import "./../../App";
+
+.artist-card {
+  box-shadow: $first-elevation;
+  background: $first-elevation-color;
+  color: $text-white;
+}
+
+.artist-card:hover {
+  box-shadow: $first-elevation-hover;
+}

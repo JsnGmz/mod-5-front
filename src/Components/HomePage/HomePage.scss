@@ -1,7 +1,4 @@
-$spotify-green: #1DB954;
-$first-elavation: rgb(28, 28, 28);
-$gradient: rgb(50, 50, 50);
-$text-white: rgb(221, 221, 221);
+@import "./../../App";
 
 .container {
   height: 100%;
@@ -13,11 +10,10 @@ $text-white: rgb(221, 221, 221);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: $first-elavation;
-  background: radial-gradient(circle, $first-elavation 0%, $gradient 100%);
+  background: $first-elevation;
+  background: radial-gradient(circle, $first-elevation-color 0%, $gradient 75%);
   color: $text-white;
-  box-shadow: 0 5px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-
+  box-shadow: $first-elevation;
 }
 
 .btn {
