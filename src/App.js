@@ -11,6 +11,7 @@ import Navbar from './Components/Navbar';
 import HomePage from './Components/HomePage';
 import Callback from './Components/Callback';
 import Profile from './Components/Profile';
+import RecommendedPlaylist from "./Components/RecommendedPlaylist";
 
 const App = (props) => {
   return (
@@ -19,6 +20,7 @@ const App = (props) => {
           {props.currentUser ? <Navbar /> : null}
           <Route exact path='/spotify/callback' component={Callback}/>
           <Route exact path='/profile' component={Profile} />
+          <Route path='/recommended/playlist' component={RecommendedPlaylist} />
       </Router>
   );
 };

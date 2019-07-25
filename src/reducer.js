@@ -9,6 +9,8 @@ const reducer = (state = defaultState, action) => {
           return {...state, currentUser: action.payload};
       case 'SET_TOP_ARTISTS':
           return { ...state, usersTopArtists: action.payload};
+      case 'SET_RECOMMENDED_PLAYLIST':
+          return { ...state, recommendedPlaylist: action.payload};
       default:
           return state;
   }

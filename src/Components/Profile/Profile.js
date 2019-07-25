@@ -43,7 +43,7 @@ class Profile extends Component {
                                 </CardBody>
                             </Card>
                             <br/>
-                            <TopGenresCard />
+                            <TopGenresCard history={this.props.history}/>
                         </Col>
                         <Col sm='12' md='8'>
                             <Row>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ListGroup, ListGroupItem } from 'reactstrap';
 
 /* Files and Css */
+import { ListGroup, ListGroupItem } from 'reactstrap';
 import './TopGenresCard.scss';
 
 const TopGenresCard = (props) => {
@@ -37,7 +37,12 @@ const TopGenresCard = (props) => {
     const topXGenres = (num) => {
         const sortedGenres = sortGenres();
         const sortedGenresKeys = Object.keys(sortedGenres);
-        return sortedGenresKeys.slice(0, num).map(k => <ListGroupItem key={`${k} count`}>{k}: {sortedGenres[k]}</ListGroupItem>)
+        return sortedGenresKeys.slice(0, num).map(k => <ListGroupItem onClick={() => handleClick(k)} key={`${k} count`}>{k}: {sortedGenres[k]}</ListGroupItem>)
+    };
+
+    const handleClick = (k) => {
+      fetch(`http://localhost:3000/api/v1/users/${props.currentUser.id}/spotify/recommendations/${k}`)
+          .then(r => r.json()).then(data => props.setRecommendedPlaylist(data.tracks)).then(props.history.push(`/recommended/playlist/${k}`))
     };
 
     return (
@@ -50,8 +55,17 @@ const TopGenresCard = (props) => {
 
 function mapStateToProps(state) {
     return {
+        currentUser: state.currentUser,
         usersTopArtists: state.usersTopArtists
     }
 }
 
-export default connect(mapStateToProps, null)(TopGenresCard)
+function mapDispatchToProps(dispatch) {
+    return {
+        setRecommendedPlaylist: (tracks) => {
+            dispatch({type: 'SET_RECOMMENDED_PLAYLIST', payload: tracks})
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TopGenresCard)
