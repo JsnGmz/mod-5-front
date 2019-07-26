@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7007aed3-c63f-4163-b83f-5b74b926aafa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/RecommendedPlaylist/RecommendedPlaylist.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/RecommendedPlaylist/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/PlaylistInfo/PlaylistInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/PlaylistInfo/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/TrackCard/TrackCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/TrackCard/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/TopGenresCard/TopGenresCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TopGenresCard/TopGenresCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RecommendedPlaylist/RecommendedPlaylist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RecommendedPlaylist/RecommendedPlaylist.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +102,7 @@
       <workItem from="1563327903433" duration="37977000" />
       <workItem from="1563893826136" duration="17122000" />
       <workItem from="1564067996654" duration="5541000" />
-      <workItem from="1564088310278" duration="1509000" />
+      <workItem from="1564088310278" duration="11886000" />
     </task>
     <task id="LOCAL-00001" summary="Did everything up until now.">
       <created>1563377954810</created>
@@ -133,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563989546225</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Start track recommendation component.">
+      <created>1564092143031</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1564092143031</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -166,7 +172,8 @@
     <MESSAGE value="Made a profile page and a home page. Added a lot of stuff." />
     <MESSAGE value="Styled cards so that they are all aligned." />
     <MESSAGE value="Did something." />
-    <option name="LAST_COMMIT_MESSAGE" value="Did something." />
+    <MESSAGE value="Start track recommendation component." />
+    <option name="LAST_COMMIT_MESSAGE" value="Start track recommendation component." />
   </component>
   <component name="masterDetails">
     <states>
