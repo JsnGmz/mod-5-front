@@ -15,7 +15,7 @@ class Profile extends Component {
             fetch(`http://localhost:3000/api/v1/users/${this.props.currentUser.id}/spotify/top/artists`)
                 .then(r => r.json()).then(artists => this.props.setUsersTopArtists(artists.items))
         }
-    }
+    };
 
     render() {
         return (
@@ -56,7 +56,7 @@ class Profile extends Component {
 
                             <Row>
                                 <CardDeck>
-                                    {this.props.usersTopArtists.slice(4, 7).map(artist => <Col sm='12' md='4' key={artist.name}><ArtistCard artist={artist} key={artist.name}/></Col>)}
+                                    {this.props.usersTopArtists.slice(3, 6).map(artist => <Col sm='12' md='4' key={artist.name}><ArtistCard artist={artist} key={artist.name}/></Col>)}
                                 </CardDeck>
                             </Row>
 
@@ -64,7 +64,15 @@ class Profile extends Component {
 
                             <Row>
                                 <CardDeck>
-                                    {this.props.usersTopArtists.slice(8, 11).map(artist => <Col sm='12' md='4' key={artist.name}><ArtistCard artist={artist} key={artist.name}/></Col>)}
+                                    {this.props.usersTopArtists.slice(6, 9).map(artist => <Col sm='12' md='4' key={artist.name}><ArtistCard artist={artist} key={artist.name}/></Col>)}
+                                </CardDeck>
+                            </Row>
+
+                            <br/>
+
+                            <Row>
+                                <CardDeck>
+                                    {this.props.usersTopArtists.slice(9, 12).map(artist => <Col sm='12' md='4' key={artist.name}><ArtistCard artist={artist} key={artist.name}/></Col>)}
                                 </CardDeck>
                             </Row>
 
@@ -80,7 +88,15 @@ class Profile extends Component {
 
                             <Row>
                                 <CardDeck>
-                                    {this.props.usersTopArtists.slice(16, 19).map(artist => <Col sm='12' md='4' key={artist.name}><ArtistCard artist={artist} key={artist.name}/></Col>)}
+                                    {this.props.usersTopArtists.slice(15, 18).map(artist => <Col sm='12' md='4' key={artist.name}><ArtistCard artist={artist} key={artist.name}/></Col>)}
+                                </CardDeck>
+                            </Row>
+
+                            <br/>
+
+                            <Row>
+                                <CardDeck>
+                                    {this.props.usersTopArtists.slice(18, 21).map(artist => <Col sm='12' md='4' key={artist.name}><ArtistCard artist={artist} key={artist.name}/></Col>)}
                                 </CardDeck>
                             </Row>
 
