@@ -3,11 +3,12 @@ import React, { Fragment } from 'react';
 
 /* CSS */
 import { Card, CardBody, CardText, Badge } from 'reactstrap';
+import './TrackCard.scss'
 
 const TrackCard = (props) => {
     return (
         <Fragment>
-            <Card>
+            <Card className='recommend-card'>
                 <CardBody>
                     <CardText>{props.trackName} | {props.artistName} {props.explicit && <Badge color='dark' pill>explicit</Badge>}</CardText>
                 </CardBody>

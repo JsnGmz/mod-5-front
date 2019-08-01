@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+// Files and Css
+import { ListGroup, ListGroupItem } from 'reactstrap'
+
 const PlaylistInfo = (props) => {
     const sumDurationMS = () => {
         let duration = 0;
@@ -14,13 +17,20 @@ const PlaylistInfo = (props) => {
         const minutes = convertMStoM(sumDurationMS());
         const remainder = minutes.toString().split('.');
         const seconds = 60 * parseFloat(remainder[1]);
-        return `${remainder[0]}:${seconds.toString().slice(0, 2)}`
+        return `Playlist Time: ${remainder[0]}:${seconds.toString().slice(0, 2)}`
+    };
+
+    const averagePopularity = () => {
+        let popularity = 0;
+        props.tracks.forEach(track => popularity += track.popularity)
+        return `Average Song Popularity: ${popularity / props.tracks.length}`
     };
 
     return (
-        <div>
-            {props.tracks && formatTime()}
-        </div>
+        <ListGroup>
+            <ListGroupItem>{props.tracks && formatTime()}</ListGroupItem>
+            <ListGroupItem>{props.tracks && averagePopularity()}</ListGroupItem>
+        </ListGroup>
     )
 };
 

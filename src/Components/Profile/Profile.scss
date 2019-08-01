@@ -1,6 +1,10 @@
 @import "./../../App";
 
-.profile-img-card{
+.profile-img-card {
   background: $first-elevation-color;
   color: $text-white;
+}
+
+.card-deck {
+  width: 100%;
 }

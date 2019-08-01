@@ -1,0 +1,11 @@
+@import "./../../App";
+
+.recommend-card {
+  box-shadow: $first-elevation;
+  background: $first-elevation-color;
+  color: $text-white;
+}
+
+.recommend-card:hover {
+  box-shadow: $first-elevation-hover;
+}
