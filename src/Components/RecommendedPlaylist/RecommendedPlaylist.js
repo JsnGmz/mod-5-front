@@ -44,24 +44,27 @@ class RecommendedPlaylist extends Component {
     };
 
     createPlaylist = () => {
-        this.props.tracks.map((track) => {
-            return fetch(`http://localhost:3000/api/v1/users/${this.props.currentUser.id}/spotify/playlist/new`, {
+        fetch(`http://localhost:3000/api/v1/users/${this.props.currentUser.id}/spotify/playlist/new`, {
+            method: 'POST',
+        }).then(r => r.json()).then(playlistID => this.props.tracks.map((track) => {
+            return fetch(`http://localhost:3000/api/v1/users/${this.props.currentUser.id}/spotify/playlist/track/add`, {
                 method: 'POST',
                 header: {
                     'Content-Type': 'application/json',
                     Accept: 'application/json'
                 },
-                body: JSON.stringify({uri: track.uri})
-            }).then(r => r.json()).then(successMessage => {
-                return (
-                    this.setState((prevState) =>  {
-                        return {
-                            success: [...prevState.success, successMessage]
-                        }
-                    })
-                )
-            }).then(a => this.renderToast())
-        });
+                body: JSON.stringify({uri: track.uri, playlist_id: playlistID['playlist_id']})
+                }).then(r => r.json()).then(successMessage => {
+                    console.log(successMessage.success)
+                    return (
+                        this.setState((prevState) =>  {
+                            return {
+                                success: [...prevState.success, successMessage]
+                            }
+                        })
+                    )
+                }).then(a => this.renderToast())
+        }));
         this.generateRecommendation();
     };
 

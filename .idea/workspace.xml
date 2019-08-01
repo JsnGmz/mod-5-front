@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7007aed3-c63f-4163-b83f-5b74b926aafa" name="Default Changelist" comment="Configure frontend for auto login. Fixed Some styling issue.">
-      <change afterPath="$PROJECT_DIR$/src/Components/RecommendedPlaylist/RecommendedPlaylist.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/TrackCard/TrackCard.scss" afterDir="false" />
+    <list default="true" id="7007aed3-c63f-4163-b83f-5b74b926aafa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlaylistInfo/PlaylistInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlaylistInfo/PlaylistInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Profile/Profile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/Profile.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/RecommendedPlaylist/RecommendedPlaylist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RecommendedPlaylist/RecommendedPlaylist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/TrackCard/TrackCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TrackCard/TrackCard.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +98,7 @@
       <workItem from="1563327903433" duration="37977000" />
       <workItem from="1563893826136" duration="17122000" />
       <workItem from="1564067996654" duration="5541000" />
-      <workItem from="1564088310278" duration="34474000" />
+      <workItem from="1564088310278" duration="37837000" />
     </task>
     <task id="LOCAL-00001" summary="Did everything up until now.">
       <created>1563377954810</created>
@@ -154,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564608252896</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Create save and generate playlist feature.">
+      <created>1564688911191</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1564688911191</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -190,7 +192,8 @@
     <MESSAGE value="Start track recommendation component." />
     <MESSAGE value="Start recommendation information component." />
     <MESSAGE value="Configure frontend for auto login. Fixed Some styling issue." />
-    <option name="LAST_COMMIT_MESSAGE" value="Configure frontend for auto login. Fixed Some styling issue." />
+    <MESSAGE value="Create save and generate playlist feature." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create save and generate playlist feature." />
   </component>
   <component name="masterDetails">
     <states>
